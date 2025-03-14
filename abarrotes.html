@@ -1,42 +1,139 @@
 ﻿<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tiendita</title>
     <link rel="stylesheet" href="estilo aa.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Abarrotes Andrea</h1>
-    </header>
+    <div class="main-container">
+        <header class="main-header">
+            <img src="/imgenes/logo.png" alt="logo de SnackLand">
+        </header>
 
-    <main>
-        <section class="productos">
-            <h2>Productos</h2>
-            <div class="producto">
-                <img src="platano.jpg" alt="Plátano">
-                <h3 style="color:#000000">Plátano</h3>
-                <p style="color:#000000">$10.00/kg</p>
-                <button>Agregar al carrito</button>
-            </div>
-            <div class="producto">
-                <img src="manzana.jpg" alt="manzana">
-                <h3 style="color:#000000">Manzana</h3>
-                <p style="color:#000000">$12.00/kg</p>
-                <button>Agregar al carrito</button>
-            </div>
-            <div class="producto">
-                <img src="naranja.jpg" alt="Naranja">
-                <h3 style="color:#000000">Naranja</h3>
-                <p style="color:#000000">$15.00/kg</p>
-                <button>Agregar al carrito</button>
-            </div>
-        </section>
+        <div class="main-section">
+            <section class="main-nav">
+                <h2>Carrito</h2>
 
-        <aside>
-            <h2>Tu carrito</h2>
-        </aside>
-    </main>
+                <div class="cart-element">
+                    <div class="image-element">
+                        <img src="/imgenes/donut.png" alt="">
+                    </div>
+
+                    <div class="info-element">
+                        <p>Donut</p>
+                        <span> $10.00</span>
+                        <div class="selection-quantity">
+                            <button type="button"><i class="fa-solid fa-minus"></i></i></button>
+                            <span>1</span>
+                            <button type="button"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>  
+
+                </div>
+
+            </section>
+
+            <main class="main-content">
+                
+                <h2>Menu</h2>
+
+                <section class="sec-section">   
+
+                    <div class="product-container">
+
+                        <div class="img-container">
+                            <img src="/imgenes/pretzel.png" alt="">
+                        </div>
+
+                        <div class="main-text">
+                            <h3>Pretzel</h3>
+                            <p class="precio">$18.00</p>
+                            <p> pan horneado en forma de lazo, crujiente por fuera y 
+                                suave por dentro, con sal gruesa.</p>
+                        </div>
+
+                        
+                        <button class="Añadir"><b>Añadir a carrito</b></button>
+
+                        <div class="selection-quantity">
+                            <button type="button"><i class="fa-solid fa-minus"></i></i></button>
+                            <span>1</span>
+                            <button type="button"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="product-container">
+
+                        <div class="img-container">
+                            <img src="/imgenes/donut.png" alt="">
+                        </div>
+
+                        <div class="main-text">
+                            <h3>Donut</h3>
+                            <p class="precio">$10.00</p>
+                            <p> pan dulce esponjoso, en forma de anillo, frito u horneado, y 
+                                cubierto con azúcar, glaseado o chocolate.</p>
+                        </div>
+
+                        <button class="Añadir"><b>Añadir a carrito</b></button>
+
+                        <div class="selection-quantity">
+                            <button type="button"><i class="fa-solid fa-minus"></i></i></button>
+                            <span>1</span>
+                            <button type="button"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="product-container">
+
+                        <div class="img-container">
+                            <img src="/imgenes/churro.png" alt="">
+                        </div>
+
+                        <div class="main-text">
+                            <h3>Churros</h3>
+                            <p class="precio">$21.00</p>
+                            <p> dulce frito de masa crujiente por fuera y suave por dentro, 
+                                espolvoreado con azúcar y canela, y puede ser relleno con chocolate, cajeta o crema.</p>
+                        </div>
+                        <button class="Añadir"><b>Añadir a carrito</b></button>    
+                        <div class="selection-quantity">
+                            <button type="button"><i class="fa-solid fa-minus"></i></i></button>
+                            <span>1</span>
+                            <button type="button"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="product-container">
+
+                        <div class="img-container">
+                            <img src="/imgenes/frappe.png" alt="">
+                        </div>
+
+                        <div class="main-text">
+                            <h3>Frappe</h3>
+                            <p class="precio">$28.00</p>
+                            <p>Bebida fría y cremosa, hecha con hielo, café o frutas, y 
+                                mezclada hasta obtener una textura espumosa,decorada con crema batida o jarabes.</p>
+                        </div>
+
+                        <button class="Añadir"><b>Añadir a carrito</b></button>
+                        <div class="selection-quantity">
+                            <button type="button"><i class="fa-solid fa-minus"></i></i></button>
+                            <span>1</span>
+                            <button type="button"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+
+                </section>
+            </main>
+        </div>
+    </div>
 </body>
 </html>
