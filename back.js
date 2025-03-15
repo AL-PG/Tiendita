@@ -1,13 +1,12 @@
-function Producto(nombre,stock, precio) {
+function Producto(nombre, precio) {
     this.nombre = nombre
-    this.stock = stock;
     this.precio = precio;
 }
 
-let pretzel = new Producto("Pretzel",200, 18);
-let donut = new Producto("Donut",150, 10);
-let Churros = new Producto("Churros",250, 21);
-let frappe = new Producto("Frappe", 150, 28);
+let pretzel = new Producto("Pretzel", 18);
+let donut = new Producto("Donut", 10);
+let Churros = new Producto("Churros", 21);
+let frappe = new Producto("Frappe", 28);
 
 function cantidadMas(boton) {
     let idSpan = boton.getAttribute("data-target"); 
@@ -26,27 +25,32 @@ function cantidadMenos(boton) {
 function añadir(boton) {
     let padre = boton.parentElement;
     let id = boton.getAttribute("data-target");
-    document.getElementById(id).style.display = "grid";
 
     switch (padre.id) {
         case "pretzel":
+            if(document.getElementById("span-p").textContent == "0") {return}  
             document.getElementById("precio-p").textContent = "$"+ pretzel.precio * parseInt(document.getElementById("span-p").textContent);
             document.getElementById("span-p-c").textContent = document.getElementById("span-p").textContent;
             break;
         case "donut":
+            if(document.getElementById("span-d").textContent == "0") {return}  
             document.getElementById("precio-d").textContent = "$"+ donut.precio * parseInt(document.getElementById("span-d").textContent);
             document.getElementById("span-d-c").textContent = document.getElementById("span-d").textContent;
             break;
         case "churro":
+            if(document.getElementById("span-c").textContent == "0") {return}  
             document.getElementById("precio-c").textContent = "$"+ Churros.precio * parseInt(document.getElementById("span-c").textContent);
             document.getElementById("span-c-c").textContent = document.getElementById("span-c").textContent;
             break;
         case "frappe":
+            if(document.getElementById("span-f").textContent == "0") {return}  
             document.getElementById("precio-f").textContent = "$"+ frappe.precio * parseInt(document.getElementById("span-f").textContent)
             document.getElementById("span-f-c").textContent = document.getElementById("span-f").textContent;
             break;
     }
-
+    document.getElementById(id).style.display = "grid";
+    document.getElementById("buy-id").style.display = "block";
+    document.getElementById("id-empty").style.display = "none";
     total();   
 }
 
@@ -79,6 +83,8 @@ function pagar() {
     document.getElementById("span-f-c").textContent = 0;
 
     total();
+    document.getElementById("buy-id").style.display = "none";
+    document.getElementById("id-empty").style.display = "block";
 }
 
 
@@ -105,6 +111,16 @@ function eliminar(boton) {
             document.getElementById("precio-f").textContent = "$0";
             document.getElementById("span-f-c").textContent = 0;
             break;
+    }
+    
+    if (getComputedStyle(document.getElementById("frappe-cart")).display == "none" && 
+        getComputedStyle(document.getElementById("pretzel-cart")).display == "none" &&
+        getComputedStyle(document.getElementById("donut-cart")).display == "none" && 
+        getComputedStyle(document.getElementById("churro-cart")).display == "none") {
+
+        
+        document.getElementById("buy-id").style.display = "none";
+        document.getElementById("id-empty").style.display = "block";
     }
 
     total();

@@ -201,6 +201,7 @@ body {
 }
 
 .buy-container {
+    display: none;
     width: 70%;
     height: 10%;
 }
@@ -239,4 +240,13 @@ body {
 
  .cart-title button:hover{
     color: red;
+ }
+
+ .empty {
+    margin: 10%;
+ }
+
+ .spans-total {
+    color: #fea06f;
+    font-weight: bold;
  }

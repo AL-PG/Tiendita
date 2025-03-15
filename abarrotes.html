@@ -36,9 +36,8 @@
                         <span class="spans-total" id="precio-p">$0</span>
 
                         <div class="selection-quantity">
-                            <button data-target="span-p-c" type="button" onclick="cantidadMenos(this)"><i class="fa-solid fa-minus"></i></i></button>
+                            <span>Cantidad: </span>
                             <span id="span-p-c">0</span>
-                            <button data-target="span-p-c" type="button" onclick="cantidadMas(this)"><i class="fa-solid fa-plus"></i></button>
                        </div>
 
                     </div> 
@@ -59,9 +58,8 @@
                         <span class="spans-total" id="precio-d">$0</span>
 
                         <div class="selection-quantity">
-                            <button type="button" onclick="cantidadMenos(this)" data-target="span-d-c"><i class="fa-solid fa-minus"></i></i></button>
+                            <span>Cantidad: </span>
                             <span id="span-d-c">0</span>
-                            <button type="button" onclick="cantidadMas(this)" data-target="span-d-c"><i class="fa-solid fa-plus"></i></button>
                        </div>
 
                     </div> 
@@ -82,9 +80,8 @@
                         <span class="spans-total" id="precio-c">$0</span>
 
                         <div class="selection-quantity">
-                            <button type="button" onclick="cantidadMenos(this)" data-target="span-c-c"><i class="fa-solid fa-minus"></i></i></button>
+                            <span>Cantidad: </span>
                             <span id="span-c-c">0</span>
-                            <button type="button" onclick="cantidadMas(this)" data-target="span-c-c"><i class="fa-solid fa-plus"></i></button>
                        </div>
 
                     </div> 
@@ -106,19 +103,24 @@
                         <span class="spans-total" id="precio-f">$0</span>
 
                         <div class="selection-quantity">
-                            <button type="button" onclick="cantidadMenos(this)" data-target="span-f-c"><i class="fa-solid fa-minus"></i></i></button>
+                            <span>Cantidad: </span>
                             <span id="span-f-c">0</span>
-                            <button type="button" onclick="cantidadMas(this)" data-target="span-f-c"><i class="fa-solid fa-plus"></i></button>
                        </div>
 
                     </div> 
                 </div>
 
-                <div class="buy-container">
+                <div class="buy-container" id="buy-id">
                     <span>Total a pagar: </span>
                     <span id="Total">$ 0</span>
                     <button type="button" class="pagar" onclick="pagar()">Pagar</button>
                 </div>
+
+                <P class="empty" id="id-empty"><b>Tu carrito está vacío. 
+                    <br>
+                </b>
+                    Parece que aún no has agregado nada. 
+                    ¡Explora nuestros productos! </P>
 
             </section>
 
