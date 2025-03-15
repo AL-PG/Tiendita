@@ -153,7 +153,7 @@ body {
 }
 
 .cart-element {
-    display: grid;
+    display: none;
     grid-template-columns: 1fr 2fr;
     border-radius: 20px;
     width: 90%;
@@ -224,4 +224,19 @@ body {
 
 .buy-container span {
     padding: 5%;
+ }
+
+ .cart-title {
+    display: flex;
+    flex-direction: column-reverse;
+ }
+
+ .cart-title button {
+    align-self: flex-end;
+    border: none;
+    background-color: white;
+ }
+
+ .cart-title button:hover{
+    color: red;
  }

@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <script></script>
 </head>
 <body>
     <div class="main-container">
@@ -26,15 +25,20 @@
                     <div class="image-element">
                         <img src="/imgenes/pretzel.png" alt="">
                     </div>
+
                     <div class="info-element">
 
-                        <p>Pretzel</p>
-                        <span> $18.00</span>
+                        <div class="cart-title">
+                            <p>Pretzel</p>
+                            <button type="button" onclick="eliminar(this)" data-target="pretzel-cart"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+
+                        <span class="spans-total" id="precio-p">$0</span>
 
                         <div class="selection-quantity">
-                            <button type="button"><i class="fa-solid fa-minus"></i></i></button>
-                            <span>1</span>
-                            <button type="button" onclick="cantidadMas()"><i class="fa-solid fa-plus"></i></button>
+                            <button data-target="span-p-c" type="button" onclick="cantidadMenos(this)"><i class="fa-solid fa-minus"></i></i></button>
+                            <span id="span-p-c">0</span>
+                            <button data-target="span-p-c" type="button" onclick="cantidadMas(this)"><i class="fa-solid fa-plus"></i></button>
                        </div>
 
                     </div> 
@@ -47,13 +51,17 @@
                     </div>
                     <div class="info-element">
 
-                        <p>Donut</p>
-                        <span> $10.00</span>
+                        <div class="cart-title">
+                            <p>Donut</p>
+                            <button type="button" onclick="eliminar(this)" data-target="donut-cart"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+
+                        <span class="spans-total" id="precio-d">$0</span>
 
                         <div class="selection-quantity">
-                            <button type="button"><i class="fa-solid fa-minus"></i></i></button>
-                            <span>1</span>
-                            <button type="button"><i class="fa-solid fa-plus"></i></button>
+                            <button type="button" onclick="cantidadMenos(this)" data-target="span-d-c"><i class="fa-solid fa-minus"></i></i></button>
+                            <span id="span-d-c">0</span>
+                            <button type="button" onclick="cantidadMas(this)" data-target="span-d-c"><i class="fa-solid fa-plus"></i></button>
                        </div>
 
                     </div> 
@@ -66,13 +74,17 @@
                     </div>
                     <div class="info-element">
 
-                        <p>Churros</p>
-                        <span> $21.00</span>
+                        <div class="cart-title">
+                            <p>Churros</p>
+                            <button type="button" onclick="eliminar(this)" data-target="churro-cart"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+
+                        <span class="spans-total" id="precio-c">$0</span>
 
                         <div class="selection-quantity">
-                            <button type="button"><i class="fa-solid fa-minus"></i></i></button>
-                            <span>1</span>
-                            <button type="button"><i class="fa-solid fa-plus"></i></button>
+                            <button type="button" onclick="cantidadMenos(this)" data-target="span-c-c"><i class="fa-solid fa-minus"></i></i></button>
+                            <span id="span-c-c">0</span>
+                            <button type="button" onclick="cantidadMas(this)" data-target="span-c-c"><i class="fa-solid fa-plus"></i></button>
                        </div>
 
                     </div> 
@@ -81,17 +93,22 @@
                 <div class="cart-element" id="frappe-cart">
 
                     <div class="image-element">
-                        <img src="/imgenes/donut.png" alt="">
+                        <img src="/imgenes/frappe.png" alt="">
                     </div>
+
                     <div class="info-element">
 
-                        <p>Frappe</p>
-                        <span>$28.00</span>
+                        <div class="cart-title">
+                            <p>Frappe</p>
+                            <button type="button" onclick="eliminar(this)" data-target="frappe-cart"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+
+                        <span class="spans-total" id="precio-f">$0</span>
 
                         <div class="selection-quantity">
-                            <button type="button"><i class="fa-solid fa-minus"></i></i></button>
-                            <span>1</span>
-                            <button type="button"><i class="fa-solid fa-plus"></i></button>
+                            <button type="button" onclick="cantidadMenos(this)" data-target="span-f-c"><i class="fa-solid fa-minus"></i></i></button>
+                            <span id="span-f-c">0</span>
+                            <button type="button" onclick="cantidadMas(this)" data-target="span-f-c"><i class="fa-solid fa-plus"></i></button>
                        </div>
 
                     </div> 
@@ -99,8 +116,8 @@
 
                 <div class="buy-container">
                     <span>Total a pagar: </span>
-                    <span>$10.00</span>
-                    <button type="button" class="pagar">Pagar</button>
+                    <span id="Total">$ 0</span>
+                    <button type="button" class="pagar" onclick="pagar()">Pagar</button>
                 </div>
 
             </section>
@@ -125,12 +142,12 @@
                         </div>
 
                         
-                        <button class="Añadir"><b>Añadir a carrito</b></button>
+                        <button class="Añadir" onclick="añadir(this)" data-target="pretzel-cart"><b>Añadir a carrito</b></button>
 
                         <div class="selection-quantity">
-                            <button type="button"><i class="fa-solid fa-minus"></i></i></button>
-                            <span>1</span>
-                            <button type="button"><i class="fa-solid fa-plus"></i></button>
+                            <button type="button" onclick="cantidadMenos(this)" data-target="span-p"><i class="fa-solid fa-minus"></i></i></button>
+                            <span id="span-p">0</span>
+                            <button type="button" onclick="cantidadMas(this)" data-target="span-p"><i class="fa-solid fa-plus"></i></button>
                         </div>
                     </div>
 
@@ -147,12 +164,12 @@
                                 cubierto con azúcar, glaseado o chocolate.</p>
                         </div>
 
-                        <button class="Añadir"><b>Añadir a carrito</b></button>
+                        <button class="Añadir" onclick="añadir(this)" data-target="donut-cart"><b>Añadir a carrito</b></button>
 
                         <div class="selection-quantity">
-                            <button type="button"><i class="fa-solid fa-minus"></i></i></button>
-                            <span>1</span>
-                            <button type="button"><i class="fa-solid fa-plus"></i></button>
+                            <button type="button" onclick="cantidadMenos(this)" data-target="span-d"><i class="fa-solid fa-minus"></i></i></button>
+                            <span id="span-d">0</span>
+                            <button type="button" onclick="cantidadMas(this)" data-target="span-d"><i class="fa-solid fa-plus"></i></button>
                         </div>
                     </div>
 
@@ -168,11 +185,11 @@
                             <p> dulce frito de masa crujiente por fuera y suave por dentro, 
                                 espolvoreado con azúcar y canela, y puede ser relleno con chocolate, cajeta o crema.</p>
                         </div>
-                        <button class="Añadir"><b>Añadir a carrito</b></button>    
+                        <button class="Añadir" onclick="añadir(this)" data-target="churro-cart"><b>Añadir a carrito</b></button>    
                         <div class="selection-quantity">
-                            <button type="button"><i class="fa-solid fa-minus"></i></i></button>
-                            <span>1</span>
-                            <button type="button"><i class="fa-solid fa-plus"></i></button>
+                            <button type="button" onclick="cantidadMenos(this)" data-target="span-c"><i class="fa-solid fa-minus"></i></i></button>
+                            <span id="span-c">0</span>
+                            <button type="button" onclick="cantidadMas(this)" data-target="span-c"><i class="fa-solid fa-plus"></i></button>
                         </div>
                     </div>
 
@@ -189,11 +206,11 @@
                                 mezclada hasta obtener una textura espumosa,decorada con crema batida o jarabes.</p>
                         </div>
 
-                        <button class="Añadir"><b>Añadir a carrito</b></button>
+                        <button class="Añadir" onclick="añadir(this)" data-target="frappe-cart"><b>Añadir a carrito</b></button>
                         <div class="selection-quantity">
-                            <button type="button"><i class="fa-solid fa-minus"></i></i></button>
-                            <span>1</span>
-                            <button type="button"><i class="fa-solid fa-plus"></i></button>
+                            <button type="button" onclick="cantidadMenos(this)" data-target="span-f"><i class="fa-solid fa-minus"></i></i></button>
+                            <span id="span-f">0</span>
+                            <button type="button" onclick="cantidadMas(this)" data-target="span-f"><i class="fa-solid fa-plus"></i></button>
                         </div>
                     </div>
 
