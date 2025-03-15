@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiendita</title>
+    <link rel="stylesheet" href="estilo aa.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <header class="main-header">
+            <img src="/imgenes/logo.png" alt="logo de SnackLand">
+        </header>
+
+        <div class="main-section">
+            <section class="main-nav">
+                <h2>Carrito</h2>
+
+                <div class="cart-element" id="pretzel-cart">
+
+                    <div class="image-element">
+                        <img src="/imgenes/pretzel.png" alt="">
+                    </div>
+
+                    <div class="info-element">
+
+                        <div class="cart-title">
+                            <p>Pretzel</p>
+                            <button type="button" onclick="eliminar(this)" data-target="pretzel-cart"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+
+                        <span class="spans-total" id="precio-p">$0</span>
+
+                        <div class="selection-quantity">
+                            <span>Cantidad: </span>
+                            <span id="span-p-c">0</span>
+                       </div>
+
+                    </div> 
+                </div>
+
+                <div class="cart-element" id="donut-cart">
+
+                    <div class="image-element">
+                        <img src="/imgenes/donut.png" alt="">
+                    </div>
+                    <div class="info-element">
+
+                        <div class="cart-title">
+                            <p>Donut</p>
+                            <button type="button" onclick="eliminar(this)" data-target="donut-cart"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+
+                        <span class="spans-total" id="precio-d">$0</span>
+
+                        <div class="selection-quantity">
+                            <span>Cantidad: </span>
+                            <span id="span-d-c">0</span>
+                       </div>
+
+                    </div> 
+                </div>
+
+                <div class="cart-element" id="churro-cart">
+
+                    <div class="image-element">
+                        <img src="/imgenes/churro.png" alt="">
+                    </div>
+                    <div class="info-element">
+
+                        <div class="cart-title">
+                            <p>Churros</p>
+                            <button type="button" onclick="eliminar(this)" data-target="churro-cart"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+
+                        <span class="spans-total" id="precio-c">$0</span>
+
+                        <div class="selection-quantity">
+                            <span>Cantidad: </span>
+                            <span id="span-c-c">0</span>
+                       </div>
+
+                    </div> 
+                </div>
+
+                <div class="cart-element" id="frappe-cart">
+
+                    <div class="image-element">
+                        <img src="/imgenes/frappe.png" alt="">
+                    </div>
+
+                    <div class="info-element">
+
+                        <div class="cart-title">
+                            <p>Frappe</p>
+                            <button type="button" onclick="eliminar(this)" data-target="frappe-cart"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+
+                        <span class="spans-total" id="precio-f">$0</span>
+
+                        <div class="selection-quantity">
+                            <span>Cantidad: </span>
+                            <span id="span-f-c">0</span>
+                       </div>
+
+                    </div> 
+                </div>
+
+                <div class="buy-container" id="buy-id">
+                    <span>Total a pagar: </span>
+                    <span id="Total">$ 0</span>
+                    <button type="button" class="pagar" onclick="pagar()">Pagar</button>
+                </div>
+
+                <P class="empty" id="id-empty"><b>Tu carrito está vacío. 
+                    <br>
+                </b>
+                    Parece que aún no has agregado nada. 
+                    ¡Explora nuestros productos! </P>
+
+            </section>
+
+            <main class="main-content">
+                
+                <h2>Menu</h2>
+
+                <section class="sec-section">   
+
+                    <div class="product-container" id="pretzel">
+
+                        <div class="img-container">
+                            <img src="/imgenes/pretzel.png" alt="">
+                        </div>
+
+                        <div class="main-text">
+                            <h3>Pretzel</h3>
+                            <p class="precio">$18.00</p>
+                            <p> pan horneado en forma de lazo, crujiente por fuera y 
+                                suave por dentro, con sal gruesa.</p>
+                        </div>
+
+                        
+                        <button class="Añadir" onclick="añadir(this)" data-target="pretzel-cart"><b>Añadir a carrito</b></button>
+
+                        <div class="selection-quantity">
+                            <button type="button" onclick="cantidadMenos(this)" data-target="span-p"><i class="fa-solid fa-minus"></i></i></button>
+                            <span id="span-p">0</span>
+                            <button type="button" onclick="cantidadMas(this)" data-target="span-p"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="product-container" id="donut">
+
+                        <div class="img-container">
+                            <img src="/imgenes/donut.png" alt="">
+                        </div>
+
+                        <div class="main-text">
+                            <h3>Donut</h3>
+                            <p class="precio">$10.00</p>
+                            <p> pan dulce esponjoso, en forma de anillo, frito u horneado, y 
+                                cubierto con azúcar, glaseado o chocolate.</p>
+                        </div>
+
+                        <button class="Añadir" onclick="añadir(this)" data-target="donut-cart"><b>Añadir a carrito</b></button>
+
+                        <div class="selection-quantity">
+                            <button type="button" onclick="cantidadMenos(this)" data-target="span-d"><i class="fa-solid fa-minus"></i></i></button>
+                            <span id="span-d">0</span>
+                            <button type="button" onclick="cantidadMas(this)" data-target="span-d"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="product-container" id="churro">
+
+                        <div class="img-container">
+                            <img src="/imgenes/churro.png" alt="">
+                        </div>
+
+                        <div class="main-text">
+                            <h3>Churros</h3>
+                            <p class="precio">$21.00</p>
+                            <p> dulce frito de masa crujiente por fuera y suave por dentro, 
+                                espolvoreado con azúcar y canela, y puede ser relleno con chocolate, cajeta o crema.</p>
+                        </div>
+                        <button class="Añadir" onclick="añadir(this)" data-target="churro-cart"><b>Añadir a carrito</b></button>    
+                        <div class="selection-quantity">
+                            <button type="button" onclick="cantidadMenos(this)" data-target="span-c"><i class="fa-solid fa-minus"></i></i></button>
+                            <span id="span-c">0</span>
+                            <button type="button" onclick="cantidadMas(this)" data-target="span-c"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="product-container" id="frappe">
+
+                        <div class="img-container">
+                            <img src="/imgenes/frappe.png" alt="">
+                        </div>
+
+                        <div class="main-text">
+                            <h3>Frappe</h3>
+                            <p class="precio">$28.00</p>
+                            <p>Bebida fría y cremosa, hecha con hielo, café o frutas, y 
+                                mezclada hasta obtener una textura espumosa,decorada con crema batida o jarabes.</p>
+                        </div>
+
+                        <button class="Añadir" onclick="añadir(this)" data-target="frappe-cart"><b>Añadir a carrito</b></button>
+                        <div class="selection-quantity">
+                            <button type="button" onclick="cantidadMenos(this)" data-target="span-f"><i class="fa-solid fa-minus"></i></i></button>
+                            <span id="span-f">0</span>
+                            <button type="button" onclick="cantidadMas(this)" data-target="span-f"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+
+                </section>
+            </main>
+        </div>
+    </div>
+
+
+    <script src="back.js"></script>
+</body>
+</html>
